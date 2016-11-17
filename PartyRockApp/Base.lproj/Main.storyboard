@@ -6,6 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="still time.ttf">
+            <string>StillTime-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -73,11 +78,22 @@
                                                         <constraint firstAttribute="width" constant="68" id="XGs-Nt-amf"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where the sun goes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLB-wg-b63">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="47" id="GtS-4n-GRr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="bSP-gu-fkj" firstAttribute="centerY" secondItem="oxW-qu-Bmr" secondAttribute="centerY" id="VAS-lY-tFo"/>
+                                                <constraint firstItem="lLB-wg-b63" firstAttribute="trailing" secondItem="oxW-qu-Bmr" secondAttribute="trailingMargin" id="bC9-aw-etn"/>
                                                 <constraint firstItem="bSP-gu-fkj" firstAttribute="leading" secondItem="oxW-qu-Bmr" secondAttribute="leadingMargin" id="p5c-UT-dqm"/>
+                                                <constraint firstItem="lLB-wg-b63" firstAttribute="leading" secondItem="bSP-gu-fkj" secondAttribute="trailing" constant="8" id="sob-SO-kfB"/>
+                                                <constraint firstItem="lLB-wg-b63" firstAttribute="centerY" secondItem="oxW-qu-Bmr" secondAttribute="centerY" id="te2-B9-sIw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -98,10 +114,44 @@
                             <constraint firstAttribute="trailing" secondItem="bzC-kG-SmN" secondAttribute="trailing" id="w3d-0s-u9j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="aJe-ky-Gmr" kind="showDetail" identifier="VideoVC" id="W5H-1z-ikX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+        <!--VideoVC-->
+        <scene sceneID="WJ4-pJ-UY6">
+            <objects>
+                <viewController id="aJe-ky-Gmr" customClass="VideoVC" customModule="PartyRockApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zvL-tV-gpA"/>
+                        <viewControllerLayoutGuide type="bottom" id="2gM-BE-FbA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fDu-1m-rRg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDk-0m-xww">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="7jD-Gx-bow"/>
+                                </constraints>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87305699479999999" green="0.87305699479999999" blue="0.87305699479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EDk-0m-xww" secondAttribute="trailing" id="FI9-GX-iE7"/>
+                            <constraint firstItem="EDk-0m-xww" firstAttribute="leading" secondItem="fDu-1m-rRg" secondAttribute="leading" id="L6v-Vj-R1R"/>
+                            <constraint firstItem="EDk-0m-xww" firstAttribute="top" secondItem="fDu-1m-rRg" secondAttribute="top" id="eNP-GL-Sc4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSp-Cz-DBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="14.842578710644679"/>
         </scene>
     </scenes>
     <resources>
